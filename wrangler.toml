@@ -1,0 +1,10 @@
+# Wrangler configuration file
+# https://developers.cloudflare.com/workers/cli-wrangler/configuration
+
+name = "website"
+type = "webpack"
+route = "zhengyuan.sg/*"
+
+[site]
+bucket = "./build/"
+entry-point = "./worker/"

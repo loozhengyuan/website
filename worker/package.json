@@ -1,0 +1,6 @@
+{
+    "main": "src/index.js",
+    "dependencies": {
+        "@cloudflare/kv-asset-handler": "^0.1.1"
+    }
+}
