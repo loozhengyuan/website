@@ -24,7 +24,7 @@ defaults:
       type: posts
       path: ""
     values:
-      permalink: /blog/:title
+      permalink: /blog/:title/
 
 # Plugins
 # https://jekyllrb.com/docs/plugins/
