@@ -1,0 +1,5 @@
+# Configuration file for GitHub CODEOWNERS
+# https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners
+
+# Default owner
+*   @loozhengyuan
