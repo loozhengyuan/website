@@ -29,3 +29,10 @@ jobs:
           JEKYLL_ENV: production
         run: |
           bundle exec jekyll build
+
+      - name: Upload build assets
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build # Upload entire directory
+          if-no-files-found: error
