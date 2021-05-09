@@ -3,7 +3,6 @@ layout: post
 title: Generating GPG Keys
 tags:
   - gpg
-permalink: /blog/:title
 ---
 
 GPG is a tool that helps you sign and encrypt your data and communications. It can be used to [sign your git commits](https://help.github.com/en/github/authenticating-to-github/signing-commits), [encrypt your data and communications](https://www.gnupg.org/gph/en/manual/x110.html), and many more. Setting up GPG can be a little daunting because misconfigurations can quite dangerous, e.g. exposing your secret keys by mistake, or losing your secret keys, etc.

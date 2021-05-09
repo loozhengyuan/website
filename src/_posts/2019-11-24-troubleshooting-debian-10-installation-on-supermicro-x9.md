@@ -4,7 +4,6 @@ title: Troubleshooting Debian 10 installation on Supermicro X9
 tags:
   - debian
   - supermicro
-permalink: /blog/:title
 ---
 
 Interestingly, I encountered some roadblocks when installing Debian 10 on my Supermicro X9DRL-3F. I've been installing linux distros on many motherboards but this installation process has been the roughest I've had (in relative comparison to the past 'Just Works' installations).

@@ -4,7 +4,6 @@ title: Setting up UnattendedUpgrades on Debian 10
 tags:
   - debian
   - unattendedupgrades
-permalink: /blog/:title
 ---
 
 ## Step 1: Install dependencies

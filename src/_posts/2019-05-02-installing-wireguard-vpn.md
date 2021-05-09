@@ -5,7 +5,6 @@ tags:
   - debian
   - wireguard
   - vpn
-permalink: /blog/:title
 ---
 
 ## Prerequisites

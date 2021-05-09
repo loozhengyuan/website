@@ -3,7 +3,6 @@ layout: post
 title: Generating SSH keys
 tags:
   - ssh
-permalink: /blog/:title
 ---
 
 ## Prerequisites

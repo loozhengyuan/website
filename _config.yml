@@ -17,6 +17,15 @@ destination: build
 # Theme settings
 theme: minima
 
+# Frontmatter defaults
+# https://jekyllrb.com/docs/configuration/front-matter-defaults/
+defaults:
+  - scope:
+      type: posts
+      path: ""
+    values:
+      permalink: /blog/:title
+
 # Plugins
 # https://jekyllrb.com/docs/plugins/
 plugins:

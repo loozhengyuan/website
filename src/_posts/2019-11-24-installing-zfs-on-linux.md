@@ -4,7 +4,6 @@ title: Installing ZFS on Linux
 tags:
   - zfs
   - linux
-permalink: /blog/:title
 ---
 
 ## Installation

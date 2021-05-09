@@ -4,7 +4,6 @@ title: Setting up Direct Device Assignment on Hyper-V
 tags:
   - dda
   - hyper-v
-permalink: /blog/:title
 ---
 
 ## Prerequisites

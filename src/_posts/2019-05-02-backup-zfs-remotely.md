@@ -3,7 +3,6 @@ layout: post
 title: Backup ZFS remotely
 tags:
   - zfs
-permalink: /blog/:title
 ---
 
 We probably know how we can use `zfs send` and `zfs recv` to manage replication of snapshots, but doing this remotely is even more powerful. This article assumes basic knowledge of the two commands, but more information can be found on the [zfs(8)](https://www.freebsd.org/cgi/man.cgi?query=zfs&sektion=8) manual on FreeBSD's site. In addition, this was done both systems running NAS4Free.

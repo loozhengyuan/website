@@ -6,7 +6,6 @@ tags:
   - sso
   - google-cloud-identity
   - azure-ad
-permalink: /blog/:title
 ---
 
 I recently discovered a rare gem: [Google Cloud Identity](https://cloud.google.com/identity/). This service allows one to provision Google accounts like ones we have in Azure AD. Since we also had problems of users creating their own Google account and we did not want to pay the full G-Suite pricing just to manage/provision users, this service is exceptional for what it is worth.
