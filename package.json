@@ -1,5 +1,6 @@
 {
     "devDependencies": {
+        "@cloudflare/wrangler": "^1.16.1",
         "@lhci/cli": "^0.7.2"
     }
 }
