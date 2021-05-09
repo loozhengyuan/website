@@ -12,7 +12,7 @@ jobs:
   build:
     name: Compile site
     runs-on: ubuntu-latest
-    timeout-minutes: 1
+    timeout-minutes: 3
 
     steps:
       - name: Checkout branch
