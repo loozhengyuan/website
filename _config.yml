@@ -1,0 +1,25 @@
+# Jekyll configuration file.
+# https://jekyllrb.com/docs/configuration/
+
+# Site variables
+# https://jekyllrb.com/docs/variables/#site-variables
+title: ZhengYuan Loo
+email: hello@zhengyuan.sg
+description: |
+  The diary of his adventures.
+url: https://zhengyuan.sg
+github_username: loozhengyuan
+
+# Directory configuration
+source: src
+destination: build
+
+# Theme settings
+theme: minima
+
+# Plugins
+# https://jekyllrb.com/docs/plugins/
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
