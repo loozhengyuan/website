@@ -1,4 +1,7 @@
 # website
+
+[![build](https://github.com/loozhengyuan/website/workflows/build/badge.svg)](https://github.com/loozhengyuan/website/actions?query=workflow%3Abuild)
+
 Public website for zhengyuan.sg.
 
 ## License
