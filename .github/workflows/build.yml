@@ -1,6 +1,9 @@
 name: build
 
 on:
+  schedule:
+    # Triggers daily at 00:00 UTC
+    - cron: "0 0 * * *"
   push:
     branches:
       - main
@@ -90,7 +93,7 @@ jobs:
     needs:
       - audit
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: (github.event_name == 'push' || github.event_name == 'schedule') && github.ref == 'refs/heads/main'
     timeout-minutes: 1
 
     steps:
