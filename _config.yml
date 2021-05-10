@@ -13,6 +13,10 @@ url: https://zhengyuan.sg
 linkedin_username: loozhengyuan
 github_username: loozhengyuan
 
+# Analytics
+analytics:
+  google: G-E04C3F20CK
+
 # Directory configuration
 source: src
 destination: build
