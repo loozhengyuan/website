@@ -6,4 +6,7 @@
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     {%- feed_meta -%}
     {%- include favicon.html -%}
+    {%- if jekyll.environment == 'production' and site.analytics.google -%}
+    {%- include ga.html -%}
+    {%- endif -%}
 </head>
