@@ -14,6 +14,9 @@ async function handleEvent(event) {
         let response = await getAssetFromKV(event, options)
         return response
     } catch (e) {
-        return new Response(e.message || e.toString(), { status: 500 })
+        let response = await getAssetFromKV(event, {
+            mapRequestToAsset: req => new Request(`${new URL(req.url).origin}/404.html`, req),
+        })
+        return new Response(response.body, { ...response, status: 404 })
     }
 }
