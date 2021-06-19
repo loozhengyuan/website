@@ -338,6 +338,146 @@ Y
 save
 ```
 
+## Renewing expired keys
+
+After some time, the keys will eventually expire (if you have configured it to do so). Extending a subkey requires the use of the master key, so the process should ideally be done on an airgapped machine.
+
+When a subkey has expired, it might not be displayed when listing keys. To ensure that they are reflected, add the `--list-options show-unusable-subkeys` argument when running `gpg --list-keys`.
+
+### Import existing key
+
+Firstly, we will need to import the key from the exported key files. Since we require the master key, we can just import the `secret.asc` file, which contains everything that we need.
+
+```console
+$ gpg --import secret.asc
+gpg: key XXX: public key "John Doe <john@doe.com>" imported
+gpg: key XXX: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+```
+
+```console
+$ gpg --import-ownertrust ownertrust.txt
+gpg: inserting ownertrust of 6
+```
+
+### Extend key expiration
+
+```console
+$ gpg --edit-key XXX
+gpg (GnuPG) 2.3.1; Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Secret keys are available.
+
+pub  rsa4096/XXX
+     created: 1970-01-01  expires: never       usage: C   
+     trust: ultimate      validity: ultimate
+ssb  rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: A   
+ssb  rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: E   
+ssb  rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: S   
+[ultimate] (1). John Doe <john@doe.com>
+
+gpg> key 1
+
+pub  rsa4096/XXX
+     created: 1970-01-01  expires: never       usage: C   
+     trust: ultimate      validity: ultimate
+ssb* rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: A   
+ssb  rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: E   
+ssb  rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: S   
+[ultimate] (1). John Doe <john@doe.com>
+
+gpg> key 2
+
+pub  rsa4096/XXX
+     created: 1970-01-01  expires: never       usage: C   
+     trust: ultimate      validity: ultimate
+ssb* rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: A   
+ssb* rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: E   
+ssb  rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: S   
+[ultimate] (1). John Doe <john@doe.com>
+
+gpg> key 3
+
+pub  rsa4096/XXX
+     created: 1970-01-01  expires: never       usage: C   
+     trust: ultimate      validity: ultimate
+ssb* rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: A   
+ssb* rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: E   
+ssb* rsa4096/XXX
+     created: 1970-01-01  expired: 1970-01-01  usage: S   
+[ultimate] (1). John Doe <john@doe.com>
+
+gpg> expire
+Are you sure you want to change the expiration time for multiple subkeys? (y/N) y
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 1y
+Key expires at Thu 1 Jan 00:00:00 1971 UTC
+Is this correct? (y/N) y
+
+pub  rsa4096/XXX
+     created: 1970-01-01  expires: never       usage: C   
+     trust: ultimate      validity: ultimate
+ssb* rsa4096/XXX
+     created: 1970-01-01  expires: 1971-01-01  usage: A   
+ssb* rsa4096/XXX
+     created: 1970-01-01  expires: 1971-01-01  usage: E   
+ssb* rsa4096/XXX
+     created: 1970-01-01  expires: 1971-01-01  usage: S   
+[ultimate] (1). John Doe <john@doe.com>
+
+gpg> save
+```
+
+Once the changes have been saved, you can proceed to list the keys and the new expiry date should be indicated accordingly.
+
+```console
+$ gpg --list-keys
+--------------------------------------
+pub   rsa4096 2020-06-18 [C]
+      XXX
+uid           [ultimate] John Doe <john@doe.com>
+sub   rsa4096 1970-01-01 [A] [expires: 1971-01-01]
+sub   rsa4096 1970-01-01 [E] [expires: 1971-01-01]
+sub   rsa4096 1970-01-01 [S] [expires: 1971-01-01]
+```
+
+### Export new keys
+
+Be sure to export the newly-modified keys into their respective key files.
+
+```shell
+gpg --armor --export > public.asc
+```
+
+```shell
+gpg --armor --export-secret-keys > secret.asc
+```
+
+```shell
+gpg --armor --export-secret-subkeys > laptop.asc
+```
+
 ## Using your GPG keys
 
 ### Encrypt and decrypt files
