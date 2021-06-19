@@ -5,6 +5,8 @@ tags:
   - gpg
 ---
 
+**EDIT(2021-06-19)**: Added section on renewing expired keys.
+
 GPG is a tool that helps you sign and encrypt your data and communications. It can be used to [sign your git commits](https://help.github.com/en/github/authenticating-to-github/signing-commits), [encrypt your data and communications](https://www.gnupg.org/gph/en/manual/x110.html), and many more. Setting up GPG can be a little daunting because misconfigurations can quite dangerous, e.g. exposing your secret keys by mistake, or losing your secret keys, etc.
 
 This page assumes that you are creating your first set of keys or that you are recreating all your keys from scratch. The contents of this page may also be a little opinionated in that it follows certain approaches that are regarded by the community as a best practice, but you are free to find your preferred approach.
