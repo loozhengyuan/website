@@ -1,6 +1,6 @@
 # website
 
-[![build](https://github.com/loozhengyuan/website/workflows/build/badge.svg)](https://github.com/loozhengyuan/website/actions?query=workflow%3Abuild)
+[![build](https://github.com/loozhengyuan/website/actions/workflows/build.yml/badge.svg)](https://github.com/loozhengyuan/website/actions/workflows/build.yml)
 
 This repository contains the site assets for the `zhengyuan.sg` website. The site is built with [Jekyll](https://jekyllrb.com) and is currently deployed on [Cloudflare Workers](https://workers.cloudflare.com).
 
