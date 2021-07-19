@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Initial Thoughts on GitHub Copilot
+title: Initial thoughts on GitHub Copilot
 ---
 
 Recently, GitHub [announced](https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/) the technical preview of [GitHub Copilot](https://copilot.github.com), which is marketed as a AI pair programmer. In essence, it is pretty much an AI-powered code completion tool.
