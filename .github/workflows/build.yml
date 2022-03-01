@@ -58,7 +58,7 @@ jobs:
           path: build # Download to subdirectory
 
       - name: Set up Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "14"
 
@@ -107,7 +107,7 @@ jobs:
           path: build # Download to subdirectory
 
       - name: Set up Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "14"
 
