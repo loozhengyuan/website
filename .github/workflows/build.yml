@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download build assets
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build
           path: build # Download to subdirectory
@@ -101,7 +101,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Download build assets
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: build
           path: build # Download to subdirectory
